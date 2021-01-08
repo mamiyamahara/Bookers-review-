@@ -26,20 +26,3 @@ p {
 	padding: 13px 40px;
 	color: #555555;
 }
-
-table {
-	margin: 20px;
-}
-
-thead {
-	font-size: 13px;
-}
-
-tbody {
-	font-size: 13px;
-	color: #555555;
-}
-
-td {
-	padding: 3px;
-}

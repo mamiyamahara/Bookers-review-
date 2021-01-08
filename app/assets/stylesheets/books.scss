@@ -1,3 +1,36 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+	margin: 20px;
+}
+
+thead {
+	font-size: 13px;
+}
+
+tbody {
+	font-size: 13px;
+	color: #555555;
+}
+
+td {
+	padding: 3px;
+}
+
+.success-message{
+    color: #008000;
+    font-size: 13px;
+}
+
+.book-show {
+	padding: 10px;
+	font-size: 13px;
+	color: #555555;
+}
+
+.book-show-caption {
+	color: black;
+	padding-left: 20px;
+}
