@@ -37,5 +37,36 @@ date : 日付
 binary : バイナリデータ
 boolean : Boolean
 
+
 ②rootパスの設定
 root to: 'コントローラー名#アクション名'
+
+
+③null制約
+migrateファイルに以下記載
+「 t.データ型 "カラム名", null: false 」
+rails db:migrateで反映
+
+
+④validates
+モデルに以下記載する。(空欄でない制約)
+「 validates :カラム名, presence: true 」
+
+
+⑤flashメッセージ
+・コントローラーで表示したいメッセージを設定
+「 flash[notice] = "表示したいメッセージを記載" 」
+・Viewページの表示したい場所に以下記載。
+  <%= flash[:notice] %>
+
+
+⑥文字色について
+HTML直書きのものがCSSに書いたものより優先される。
+pタグ直書きで反映されない場合、spanタグに変更すると反映された。
+
+
+⑦form_for　フォームのサイズ指定
+f,text_area :カラム名, size: "大きさ(ヨコ)x大きさ(タテ)"
+
+fieldは小さめのテキストBox
+areaは大きめのテキストBox
