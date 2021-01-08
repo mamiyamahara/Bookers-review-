@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+	margin: 10px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: "ヒラギノ角ゴシック";
+}
+
+p {
+	font-size: 13px;
+	padding: 13px 40px;
+	color: #555555;
+}

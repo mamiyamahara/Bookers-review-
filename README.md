@@ -36,3 +36,6 @@ time : 時間
 date : 日付
 binary : バイナリデータ
 boolean : Boolean
+
+②rootパスの設定
+root to: 'コントローラー名#アクション名'
