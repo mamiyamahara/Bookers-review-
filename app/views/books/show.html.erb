@@ -12,8 +12,8 @@
     <%= @book.body %>
 </p>
 
-<p class = "book-show">
+<span style = "text-align: left; font-size: 13px;">
 	<%= link_to "Edit", edit_book_path(@book.id), style: "color: #555555" %>
 	|
 	<%= link_to "Back", books_path, style: "color: #555555" %>
-</p>
+</span>
