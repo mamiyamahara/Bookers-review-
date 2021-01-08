@@ -1,28 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 ①カラム　指定できる型
 
 string : 文字列
@@ -70,3 +47,9 @@ f,text_area :カラム名, size: "大きさ(ヨコ)x大きさ(タテ)"
 
 fieldは小さめのテキストBox
 areaは大きめのテキストBox
+
+⑧一覧表示の順番を変更する
+@変数名s = モデル名.all.order(created_at: :desc) #=>新しい順の投稿一覧
+#created_atは作成日時　descは降順
+@変数名s = モデル名.all.order(created_at: :asc)#=> 古い順の投稿一覧
+#created_atは作成日時　ascは昇順
