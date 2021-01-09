@@ -26,3 +26,17 @@ p {
 	padding: 13px 40px;
 	color: #555555;
 }
+
+.error_messages_caption {
+	padding: 8px;
+	color: white;
+	text-align: left;
+	font-size: 12px;
+	background-color: #CC0000;
+}
+
+.error_messages {
+	font-size: 12px;
+	margin: 40px;
+	padding-left: 30px;
+}

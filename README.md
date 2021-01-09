@@ -53,3 +53,36 @@ areaは大きめのテキストBox
 #created_atは作成日時　descは降順
 @変数名s = モデル名.all.order(created_at: :asc)#=> 古い順の投稿一覧
 #created_atは作成日時　ascは昇順
+
+⑨エラーメッセージの表示
+・複数箇所にエラーメッセージを表示させたい場合は、
+　エラーメッセージ用のビューファイルを作成し、以下記述してrenderで使い回す。
+・一箇所だけしか使わない場合は、表示させたいビューファイルに以下を直書きしても使える。
+
+<% if @変数名.errors.any? %>
+  <div class="alert alert-warning">(Bootstrapの装飾)
+    <ul>
+        <%= @変数名.errors.count %>errors prohibited this obj from being saved:
+        <br>
+        <% @変数名.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+・@変数名.errors.any?で全ての属性のうち１つでもエラーがあったかどうかをチェック。
+・エラーメッセージはエラーが発生すると、「error.full_message」内に格納される。
+・複数エラーが出ている場合もあるので、each doで回して全て表示させる。
+・失敗時のviewの読み込みはrenderを使用する。
+　※redirect_toにすると新しいviewページが呼ばれてしまい、ページに書いたif文が反応しない。
+　redirect_to…ルーティングを通り、新たにviewページを呼び出す。
+　render…ルーティングを通らず、viewページに飛ぶ。
+
+
+・renderでエラーメッセージのビューファイルを呼び出す時は、以下のように記述する。
+
+<%= render 'layouts/error_messages(エラーメッセージのファイル名)', model: f.object %>
+
+f.objectは、form_for (中略) do |f|のf部分にあたる。
+ここで変数を使うより、f.objectとしておけばどのページでも使えるのでこのまま覚える。
